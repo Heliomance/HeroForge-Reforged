@@ -1,28 +1,39 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import {MuiThemeProvider, withStyles} from "@material-ui/core";
+import 'typeface-roboto';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import myTheme from "./theme";
+import CharacterSheet from "./character-sheet/character-sheet";
+
+const styles = (theme) => ({
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+  }
+});
 
 class App extends Component {
+  state = {
+    character: {
+      abilities: {
+        STR: 3,
+        DEX: 4,
+        CON: 5,
+        INT: 6,
+        WIS: 7,
+        CHA: 8,
+      }
+    }
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <MuiThemeProvider theme={myTheme}>
+        <CssBaseline/>
+        <CharacterSheet character={this.state.character}/>
+      </MuiThemeProvider>
     );
   }
 }
 
-export default App;
+export default withStyles(styles)(App);
