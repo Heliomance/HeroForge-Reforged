@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
+import Grid from "@material-ui/core/Grid/index";
+import TextField from "@material-ui/core/TextField/index";
 import CharacterAbilityScores from "./character-abilities";
 import {withStyles} from "@material-ui/core";
 
@@ -66,18 +66,88 @@ class CharacterSheet extends Component {
           <Grid item xs={4}>
             <CharacterAbilityScores abilities={character.abilities}/>
           </Grid>
-          <Grid item xs={8} container direction={"row"}>
-            <Grid item xs={2}>HP</Grid>
-            <Grid item xs={4}>wnds</Grid>
-            <Grid item xs={2}>nonlethal</Grid>
-            <Grid item xs={4}>Spd</Grid>
+          <Grid item xs={8} container direction={"row"} spacing={8}>
+            <Grid item xs={2}>
+              <TextField
+                fullWidth
+                disabled
+                variant={"outlined"}
+                type={"number"}
+                label={"HP"}
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <TextField
+                fullWidth
+                variant={"outlined"}
+                type={"number"}
+                label={"Wounds"}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField
+                fullWidth
+                variant={"outlined"}
+                type={"number"}
+                label={"Nonlethal"}
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <TextField
+                fullWidth
+                disabled
+                variant={"outlined"}
+                type={"number"}
+                label={"Speed"}
+              />
+            </Grid>
 
             <Grid item xs={6} container direction={"row"}>
-              <Grid item xs={2}>AC</Grid>
-              <Grid item xs={2}>Touch</Grid>
-              <Grid item xs={2}>FF</Grid>
-              <Grid item xs={4}>INIT</Grid>
-              <Grid item xs={2}>SR</Grid>
+              <Grid item xs={2}>
+                <TextField
+                  fullWidth
+                  disabled
+                  variant={"outlined"}
+                  type={"number"}
+                  label={"AC"}
+                />
+              </Grid>
+              <Grid item xs={2}>
+                <TextField
+                  fullWidth
+                  disabled
+                  variant={"outlined"}
+                  type={"number"}
+                  label={"Touch"}
+                />
+              </Grid>
+              <Grid item xs={2}>
+                <TextField
+                  fullWidth
+                  disabled
+                  variant={"outlined"}
+                  type={"number"}
+                  label={"FF"}
+                />
+              </Grid>
+              <Grid item xs={4}>
+                <TextField
+                  fullWidth
+                  disabled
+                  variant={"outlined"}
+                  type={"number"}
+                  label={"Init"}
+                />
+              </Grid>
+              <Grid item xs={2}>
+                <TextField
+                  fullWidth
+                  disabled
+                  variant={"outlined"}
+                  type={"number"}
+                  label={"SR"}
+                />
+              </Grid>
 
               <Grid item xs={12}>DR</Grid>
             </Grid>

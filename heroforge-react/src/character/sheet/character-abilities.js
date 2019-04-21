@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react';
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
-import {abilityToBonus} from "../helperFunctions";
+import Typography from "@material-ui/core/Typography/index";
+import Grid from "@material-ui/core/Grid/index";
+import TextField from "@material-ui/core/TextField/index";
+import {abilityToBonus} from "../../helperFunctions";
 import {withStyles} from "@material-ui/core";
 
 const styles = {
